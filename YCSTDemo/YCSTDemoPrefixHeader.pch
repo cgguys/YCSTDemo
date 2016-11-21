@@ -1,0 +1,50 @@
+//
+//  YCSTDemoPrefixHeader.pch
+//  YCSTDemo
+//
+//  Created by nan gu on 16/10/10.
+//  Copyright © 2016年 nan gu. All rights reserved.
+//
+
+#ifndef YCSTDemoPrefixHeader_pch
+#define YCSTDemoPrefixHeader_pch
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AppDelegate.h"
+#import "DFRouter.h"
+#import "RouterAddress.h"
+#import "Const.h"
+#import "Marco.h"
+#import "NetworkManager.h"
+#import <MJExtension/MJExtension.h>
+#import <Masonry.h>
+#import <ChameleonFramework/Chameleon.h>
+
+#import "UIButton+Block.h"
+#import "NSDictionary+Add.h"
+#import "NSObject+Add.h"
+#import "UIResponder+Router.h"
+#import "UIViewController+GNAdd.h"
+#import "UIColor+Extension.h"
+
+
+//xcodecolor
+#define XCODE_COLORS_ESCAPE @"\033["
+#define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
+#define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
+#define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";"   // Clear any foreground or background color
+
+#define LogGreen(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg0,204,51;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+
+#define LogRed(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg153,51,51;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+
+#define LogResponseRed(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg255,0,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+
+#define LogYellow(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg255,158,45;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+
+#endif /* YCSTDemoPrefixHeader_pch */

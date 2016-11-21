@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CYLPlusButtonSubclass.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [CYLPlusButtonSubclass registerPlusButton];
+    _tabBarController = [[GNTabBarController alloc] init];
+//    self.mainTabBarController = (UITabBarController *)[DFRouter pageWithURL:GN_MainTabBar withNav:NO];
+    self.window.rootViewController = _tabBarController.tabBarController;
+    [self.window makeKeyAndVisible];
+//    [Chameleon setGlobalThemeUsingPrimaryColor:[UIColor flatGreenColorDark] withContentStyle:UIContentStyleContrast];
+
     return YES;
 }
 
